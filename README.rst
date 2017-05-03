@@ -20,8 +20,9 @@ edit steps taken to determine it. It also allows each edit type
 points of difference. This implementation is useful for cases where
 real-time performance is not a consideration, but re-weighting edit
 types or the post-processing evaluation of edit steps is a requirement.
-(Also, it could be used as a sample implementation for educational
-purposes.)
+(Also, as it's a simple, pure Python implementation, it could be easily
+customized, and it could be used as a sample implementation for
+educational purposes.)
 
 Under Python 2, all non-Unicode strings are converted to UTF-8 encoding
 to ensure multi-byte characters are treated correctly. There are no
