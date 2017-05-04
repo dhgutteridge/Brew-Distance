@@ -1,8 +1,8 @@
-Brew-Python
-===========
-
 .. image:: https://travis-ci.org/dhgutteridge/Brew-Python.svg?branch=master
     :target: https://travis-ci.org/dhgutteridge/Brew-Python
+
+Brew-Python
+===========
 
 A Python module that implements the Brew edit distance algorithm. In
 simple terms, it compares two strings and determines the number of edits
