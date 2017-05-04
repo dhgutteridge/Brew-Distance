@@ -67,8 +67,7 @@ class TestBrew(unittest.TestCase):
     # Python 2.6 triggers in an environment configured to support UTF-8,
     # while its Python 2.7 works fine. Under NetBSD 7.1, with the "C"
     # locale, Python 2.7 triggers as well. Python 2.7 has been left
-    # enabled for now; this can be revisited if it's an issue with
-    # Travis CI later.
+    # enabled for now, as it passes in the Travis CI environment.
     if sys.hexversion >= 0x02070000:
         def test_brew10(self):
             """Test edit distance between 'cafe' and 'café'."""
