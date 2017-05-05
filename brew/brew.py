@@ -21,12 +21,11 @@ from collections import namedtuple
 import sys
 
 # Public symbols
-__all__ = ["distance", "BrewException"]
+__all__ = ("distance", "BrewException")
 __author__ = "David H. Gutteridge"
 __version__ = "1.0"
 
 class BrewException(Exception):
-
     """Brew-specific exception used with argument validation."""
 
     pass
