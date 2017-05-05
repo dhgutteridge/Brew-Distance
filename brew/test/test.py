@@ -1,16 +1,13 @@
 # -*- coding: UTF-8 -*-
 
-"""
-Unit tests for brew.
-"""
+"""Unit tests for brew."""
 
 from __future__ import unicode_literals
 import sys
 import unittest
-from .. import brew
+from .. import brew, BrewException
 
 class TestBrew(unittest.TestCase):
-
     """Class to hold all the tests for this package."""
 
     # The first eight are the same used by Perl's Text::Brew test suite.
@@ -57,9 +54,19 @@ class TestBrew(unittest.TestCase):
         self.assertTrue(brew.distance("abcde", "abde", "both") == expected)
 
     def test_brew09(self):
-        """Test edit distance between 'Fuzzy Dunlop' and an empty string."""
-        expected = (12, ['DEL', 'DEL', 'DEL', 'DEL', 'DEL', 'DEL', 'DEL', 'DEL', 'DEL', 'DEL', 'DEL', 'DEL'])
-        self.assertTrue(brew.distance("Fuzzy Dunlop", "", "both") == expected)
+        """Test edit distance between 'Parrot' and an empty string."""
+        expected = (6, ['DEL', 'DEL', 'DEL', 'DEL', 'DEL', 'DEL'])
+        self.assertTrue(brew.distance("Parrot", "", "both") == expected)
+
+    def test_brew10(self):
+        """Test edit distance between 'possible' and 'poss' where deletions are zero-weighted."""
+        expected = (0, ['MATCH', 'MATCH', 'MATCH', 'MATCH', 'MATCH', 'MATCH', 'MATCH', 'MATCH'])
+        self.assertTrue(brew.distance("possible", "poss", "both", (0, 1, 0, 1)) == expected)
+
+    def test_brew11(self):
+        """Test error handling of non-string input."""
+        with self.assertRaises(BrewException):
+            brew.distance(75, 67)
 
     # Note the following three tests trigger UnicodeEncodeError exceptions
     # with Python 2.6 and some 2.7 environments due to this bug:
@@ -69,17 +76,17 @@ class TestBrew(unittest.TestCase):
     # locale, Python 2.7 triggers as well. Python 2.7 has been left
     # enabled for now, as it passes in the Travis CI environment.
     if sys.hexversion >= 0x02070000:
-        def test_brew10(self):
+        def test_brew12(self):
             """Test edit distance between 'cafe' and 'café'."""
             expected = (1, ['MATCH', 'MATCH', 'MATCH', 'SUBST'])
             self.assertTrue(brew.distance("cafe", "café", "both") == expected)
 
-        def test_brew11(self):
+        def test_brew13(self):
             """Test edit distance between 'groß' and 'gross'."""
             expected = (2, ['MATCH', 'MATCH', 'MATCH', 'INS', 'SUBST'])
             self.assertTrue(brew.distance("groß", "gross", "both") == expected)
 
-        def test_brew12(self):
+        def test_brew14(self):
             """Test edit distance between 'Σίβύλλα' and 'Sibylla'."""
             expected = (7, ['SUBST', 'SUBST', 'SUBST', 'SUBST', 'SUBST', 'SUBST', 'SUBST'])
             self.assertTrue(brew.distance("Σίβύλλα", "Sibylla", "both") == expected)
