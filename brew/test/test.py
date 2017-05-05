@@ -63,33 +63,39 @@ class TestBrew(unittest.TestCase):
         expected = (0, ['MATCH', 'MATCH', 'MATCH', 'MATCH', 'MATCH', 'MATCH', 'MATCH', 'MATCH'])
         self.assertTrue(brew.distance("possible", "poss", "both", (0, 1, 0, 1)) == expected)
 
-    def test_brew11(self):
-        """Test error handling of non-string input."""
-        with self.assertRaises(BrewException):
-            brew.distance(75, 67)
-
-    # Note the following three tests trigger UnicodeEncodeError exceptions
-    # with Python 2.6 and some 2.7 environments due to this bug:
-    # https://bugs.python.org/issue10417. On MacOS X 10.11, its native
-    # Python 2.6 triggers in an environment configured to support UTF-8,
-    # while its Python 2.7 works fine. Under NetBSD 7.1, with the "C"
-    # locale, Python 2.7 triggers as well. Python 2.7 has been left
-    # enabled for now, as it passes in the Travis CI environment.
     if sys.hexversion >= 0x02070000:
-        def test_brew12(self):
+        # Note the following three tests trigger UnicodeEncodeError
+        # exceptions with Python 2.6 and some 2.7 environments due to
+        # this bug: https://bugs.python.org/issue10417. On MacOS X 10.11,
+        # its native Python 2.6 triggers in an environment configured
+        # to support UTF-8, while its Python 2.7 works fine. Under
+        # NetBSD 7.1, with the "C" locale, Python 2.7 triggers as well.
+        # Python 2.7 has been left enabled for now, as it passes in the
+        # Travis CI environment.
+
+        def test_brew11(self):
             """Test edit distance between 'cafe' and 'café'."""
             expected = (1, ['MATCH', 'MATCH', 'MATCH', 'SUBST'])
             self.assertTrue(brew.distance("cafe", "café", "both") == expected)
 
-        def test_brew13(self):
+        def test_brew12(self):
             """Test edit distance between 'groß' and 'gross'."""
             expected = (2, ['MATCH', 'MATCH', 'MATCH', 'INS', 'SUBST'])
             self.assertTrue(brew.distance("groß", "gross", "both") == expected)
 
-        def test_brew14(self):
+        def test_brew13(self):
             """Test edit distance between 'Σίβύλλα' and 'Sibylla'."""
             expected = (7, ['SUBST', 'SUBST', 'SUBST', 'SUBST', 'SUBST', 'SUBST', 'SUBST'])
             self.assertTrue(brew.distance("Σίβύλλα", "Sibylla", "both") == expected)
+
+        # The following test fails in a Python 2.6 environment due to
+        # differences with its unittest implementation's exception
+        # trapping. It's disabled for simplicity, instead of requiring
+        # 2.6's unittest2, since that's not really necessary.
+        def test_brew14(self):
+            """Test error handling of non-string input."""
+            with self.assertRaises(BrewException):
+                brew.distance(75, 67)
 
 if __name__ == '__main__':
     unittest.main()

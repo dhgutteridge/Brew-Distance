@@ -114,13 +114,15 @@ Compatibility
 
 Brew-Python supports Python 2.6, 2.7, and 3.2+. It does not support
 Python < 2.6, as it requires **namedtuple** from **collections**. (Its
-test script is compatible with Python 2.6 even though it imports the old
-version of **unittest**.) However, due to
+test script is mostly compatible with Python 2.6 even though it imports
+the old version of **unittest**. However, due to
 `Python bug 10417 <https://bugs.python.org/issue10417>`_, tests that
 include non-ASCII characters are disabled on Python 2.6. They will also
 trigger exceptions in Python 2.7 environments that aren't set to a
 locale that supports these characters, but the tests have been left
-enabled for Python 2.7, to demonstrate it's supported.
+enabled for Python 2.7, to demonstrate it's supported. Also, an
+exception handling test is disabled in Python 2.6 due to an
+incompatibility with its **unittest**.)
 
 License
 -------
