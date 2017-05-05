@@ -27,14 +27,6 @@ types or the post-processing evaluation of edit steps is a requirement.
 customized, and it could be used as a sample implementation for
 educational purposes.)
 
-Under Python 2, all non-Unicode strings are converted to UTF-8 encoding
-to ensure multi-byte characters are treated correctly. There are no
-special considerations concerning the relatedness of various Unicode
-characters, e.g. a German double-S character is not considered
-equivalent to two S characters. Characters are dealt with as raw code
-points, without any semantic weighting. Such processing would require
-extension by the end user.
-
 Installing and uninstalling
 ---------------------------
 
@@ -108,6 +100,14 @@ Notes
 ~~~~~
 
 Character comparisons are case-sensitive.
+
+Under Python 2, all non-Unicode strings are converted to UTF-8 encoding
+to ensure multi-byte characters are treated correctly. There are no
+special considerations concerning the relatedness of various Unicode
+characters, e.g. a German double-S character is not considered
+equivalent to two S characters. Characters are dealt with as raw code
+points, without any semantic weighting. Such processing would require
+extension by the end user.
 
 Compatibility
 -------------
