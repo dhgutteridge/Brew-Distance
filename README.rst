@@ -104,6 +104,11 @@ Example
     except brew.BrewException as error:
         print(str(error))
 
+Notes
+~~~~~
+
+Character comparisons are case-sensitive.
+
 Compatibility
 -------------
 
@@ -136,12 +141,19 @@ most notably `python-Levenshtein <https://github.com/ztane/python-Levenshtein/>`
 which offers far more features in general, except it does not
 (at present) allow for re-weighting edit types.
 
+Another project under development (at the time of writing) is
+`weighted-levenshtein <https://github.com/infoscout/weighted-levenshtein/>`_,
+which also offers re-weighting of edit types, but (as of version 0.1)
+does not support Python 3 or Unicode. (However, it allows for
+re-weighting of individual characters, for more fine-grained analysis,
+e.g. to flag typical typing transposition errors.)
+
 See also
 --------
 
 `Perl's Text::Brew <https://metacpan.org/pod/Text::Brew>`_.
 
-python-Levenshtein_.
+python-Levenshtein_ and weighted-levenshtein_.
 
 A good article that discusses optimizations and character weightings is
 `Beyond StringUtils.getLevenstheinDistance <http://bend-ing.blogspot.ca/2008/06/beyond-stringutilsgetlevensteindistance.html?m=1>`_.
