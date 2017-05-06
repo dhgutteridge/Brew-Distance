@@ -9,11 +9,12 @@ simple terms, it compares two strings and determines the number of edits
 required to make the first the same as the second, typically for use
 when weighing multiple potentially similar strings in a data set.
 
-This is a mostly faithful remake of the Perl Text::Brew implementation,
+This is a mostly faithful remake of
+`Perl's Text::Brew <https://metacpan.org/pod/Text::Brew>`_ implementation,
 except "INITIAL" matches aren't reported in output, since that isn't
 meaningful. (And of course, it's written in a Pythonic idiom.) The Perl
 implementation itself states that it varies from the original Brew
-version, and I have followed it (`See also`_).
+version, and I have followed it.
 
 This module isn't intended to be the most efficient determiner of edit
 distance; rather, it's concerned with simply offering the Brew
@@ -25,7 +26,7 @@ real-time performance is not a consideration, but re-weighting edit
 types or the post-processing evaluation of edit steps is a requirement.
 (Also, as it's a simple, pure Python implementation, it could be easily
 customized, and it could be used as a sample implementation for
-educational purposes.)
+educational purposes.) (`See also`_.)
 
 Installing and uninstalling
 ---------------------------
@@ -153,7 +154,7 @@ e.g. to flag typical typing transposition errors.)
 See also
 --------
 
-`Perl's Text::Brew <https://metacpan.org/pod/Text::Brew>`_.
+`Perl's Text::Brew`_.
 
 python-Levenshtein_ and weighted-levenshtein_.
 
