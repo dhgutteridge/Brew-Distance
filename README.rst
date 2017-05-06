@@ -18,8 +18,8 @@ version, and I have followed it.
 
 This module isn't intended to be the most efficient determiner of edit
 distance; rather, it's concerned with simply offering the Brew
-algorithm in Python, which provides not just edit distance, but the
-edit steps taken to determine it. It also allows each edit type
+algorithm in pure Python, which provides not just edit distance, but
+the edit steps taken to determine it. It also allows each edit type
 ("MATCH", "DEL", "INS", "SUBST") to be re-weighted, one of its main
 points of difference. This implementation is useful for cases where
 real-time performance is not a consideration, but re-weighting edit
@@ -102,13 +102,14 @@ Notes
 
 Character comparisons are case-sensitive.
 
+There are no special considerations concerning the relatedness of
+various Unicode characters, e.g. a German Eszett (double-S) character
+is not considered equivalent to two S characters. Characters are dealt
+with as raw code points, without any semantic weighting. Such
+processing would require extension by the end user.
+
 Under Python 2, all non-Unicode strings are converted to UTF-8 encoding
-to ensure multi-byte characters are treated correctly. There are no
-special considerations concerning the relatedness of various Unicode
-characters, e.g. a German double-S character is not considered
-equivalent to two S characters. Characters are dealt with as raw code
-points, without any semantic weighting. Such processing would require
-extension by the end user.
+to ensure multi-byte characters are treated correctly.
 
 Compatibility
 -------------
