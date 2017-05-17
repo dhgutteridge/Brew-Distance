@@ -26,7 +26,7 @@ __author__ = "David H. Gutteridge"
 __version__ = "1.0"
 
 class BrewDistanceException(Exception):
-    """Brew-specific exception used with argument validation."""
+    """Brew-Distance-specific exception used with argument validation."""
 
     pass
 
