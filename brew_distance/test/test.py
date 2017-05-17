@@ -5,7 +5,7 @@
 from __future__ import unicode_literals
 import sys
 import unittest
-from .. import brew_distance.distance, BrewDistanceException
+from .. import brew_distance, BrewDistanceException
 
 class TestBrew(unittest.TestCase):
     """Class to hold all the tests for this package."""
