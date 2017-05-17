@@ -89,7 +89,7 @@ Example
 
 ::
 
-    import brew_distance.*
+    import brew_distance
 
     try:
         print("Determining results for 'four' vs. 'foo':")
