@@ -1,7 +1,7 @@
-.. image:: https://travis-ci.org/dhgutteridge/Brew-Python.svg?branch=master
-    :target: https://travis-ci.org/dhgutteridge/Brew-Python
+.. image:: https://travis-ci.org/dhgutteridge/Brew-Distance.svg?branch=master
+    :target: https://travis-ci.org/dhgutteridge/Brew-Distance
 
-Brew-Python
+Brew-Distance
 ===========
 
 A Python module that implements the Brew edit distance algorithm. In
@@ -35,22 +35,22 @@ The easiest way to install is using pip:
 
 ::
 
-    pip install brew-python
+    pip install brew-distance
 
 Alternatively you can clone this git repo and install using
 setuptools:
 
 ::
 
-    git clone git@github.com:dhgutteridge/brew-python.git
-    cd brew-python
+    git clone git@github.com:dhgutteridge/brew-distance.git
+    cd brew-distance
     python setup.py install
 
 To uninstall with pip:
 
 ::
 
-    pip uninstall brew-python
+    pip uninstall brew-distance
 
 Usage
 -----
@@ -81,7 +81,7 @@ Interface
             "both: provides a tuple containing the output of both
             previous options.
 
-    class BrewException(builtins.Exception)
+    class BrewDistanceException(builtins.Exception)
         Brew-specific exception used with argument validation.
 
 Example
@@ -89,12 +89,12 @@ Example
 
 ::
 
-    import brew
+    import brew_distance.*
 
     try:
         print("Determining results for 'four' vs. 'foo':")
-        print(str(brew.distance("four", "foo", "both")))
-    except brew.BrewException as error:
+        print(str(brew_distance.distance("four", "foo", "both")))
+    except brew_distance.BrewDistanceException as error:
         print(str(error))
 
 Notes
@@ -114,7 +114,7 @@ to ensure multi-byte characters are treated correctly.
 Compatibility
 -------------
 
-Brew-Python supports Python 2.6, 2.7, and 3.2+. It does not support
+Brew-Distance supports Python 2.6, 2.7, and 3.2+. It does not support
 Python < 2.6, as it requires **namedtuple** from **collections**. (Its
 test script is mostly compatible with Python 2.6 even though it imports
 the old version of **unittest**. However, due to
@@ -129,7 +129,7 @@ incompatibility with its **unittest**.)
 License
 -------
 
-Brew-Python is free software; you can redistribute it and/or modify it
+Brew-Distance is free software; you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the
 Free Software Foundation; either version 2 of the License, or (at your
 option) any later version.

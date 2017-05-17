@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 long_description = """\
-Brew-Python implements the Brew edit distance algorithm. This provides
+Brew-Distance implements the Brew edit distance algorithm. This provides
 not only the edit distance between two strings, but also (optionally) a
 list of the edits required to equalize them. It also allows for the
 optional re-weighting of each edit type ("MATCH", "DEL", "INS",
@@ -9,17 +9,17 @@ optional re-weighting of each edit type ("MATCH", "DEL", "INS",
 """
 
 setup(
-    name='Brew-Python',
+    name='Brew-Distance',
     version='1.0.0',
     author='David H. Gutteridge',
     author_email='dhgutteridge@hotmail.com',
-    url='http://github.com/dhgutteridge/brew-python',
+    url='http://github.com/dhgutteridge/brew-distance',
     packages=find_packages(),
     license='LICENSE.txt',
     description='A Python module that implements the Brew edit distance algorithm.',
     long_description=long_description,
     keywords=['edit', 'distance', 'editdistance', 'levenshtein', 'brew', 'string', 'comparison'],
-    test_suite='brew.test',
+    test_suite='brew_distance.test',
     include_package_data=True,
     classifiers=[
         "Development Status :: 5 - Production/Stable",

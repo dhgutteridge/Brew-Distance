@@ -21,11 +21,11 @@ from collections import namedtuple
 import sys
 
 # Public symbols
-__all__ = ("distance", "BrewException")
+__all__ = ("distance", "BrewDistanceException")
 __author__ = "David H. Gutteridge"
 __version__ = "1.0"
 
-class BrewException(Exception):
+class BrewDistanceException(Exception):
     """Brew-specific exception used with argument validation."""
 
     pass
@@ -131,10 +131,10 @@ def distance(string1, string2, output="both", cost=(0, 1, 1, 1)):
     """
     if sys.hexversion >= 0x03000000:
         if not isinstance(string1, str) or not isinstance(string2, str):
-            raise BrewException("Brew: non-string input supplied.")
+            raise BrewDistanceException("Brew-Distance: non-string input supplied.")
     else:
         if not isinstance(string1, basestring) or not isinstance(string2, basestring):
-            raise BrewException("Brew: non-string input supplied.")
+            raise BrewDistanceException("Brew-Distance: non-string input supplied.")
 
         if not isinstance(string1, unicode):
             string1 = string1.decode("utf-8")
@@ -143,11 +143,11 @@ def distance(string1, string2, output="both", cost=(0, 1, 1, 1)):
             string2 = string2.decode("utf-8")
 
     if output != "both" and output != "distance" and output != "edits":
-        raise BrewException("Brew: invalid output parameter supplied.")
+        raise BrewDistanceException("Brew-Distance: invalid output parameter supplied.")
     elif (not isinstance(cost, tuple) or len(cost) != 4 or
           not isinstance(cost[0], int) or not isinstance(cost[1], int) or
           not isinstance(cost[2], int) or not isinstance(cost[3], int)):
-        raise BrewException("Brew: invalid cost parameter supplied.")
+        raise BrewDistanceException("Brew-Distance: invalid cost parameter supplied.")
     else:
         results = _edit_path(string1, string2, cost)
 
@@ -159,5 +159,5 @@ def distance(string1, string2, output="both", cost=(0, 1, 1, 1)):
             return (results[0], _list_edits(results))
 
 if __name__ == "__main__":
-    print("Brew: determining results for 'foo' vs. 'fou':")
+    print("Brew-Distance: determining results for 'foo' vs. 'fou':")
     print(str(distance("foo", "fou", "both")))
