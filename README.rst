@@ -82,7 +82,7 @@ Interface
             previous options.
 
     class BrewDistanceException(builtins.Exception)
-        Brew-specific exception used with argument validation.
+        Brew-Distance-specific exception used with argument validation.
 
 Example
 ~~~~~~~
