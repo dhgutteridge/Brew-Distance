@@ -1,6 +1,9 @@
 .. image:: https://travis-ci.org/dhgutteridge/Brew-Distance.svg?branch=master
     :target: https://travis-ci.org/dhgutteridge/Brew-Distance
 
+.. image:: https://badge.fury.io/py/Brew-Distance.svg
+    :target: https://badge.fury.io/py/Brew-Distance
+
 Brew-Distance
 ===========
 
