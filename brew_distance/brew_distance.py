@@ -23,7 +23,7 @@ import sys
 # Public symbols
 __all__ = ("distance", "BrewDistanceException")
 __author__ = "David H. Gutteridge"
-__version__ = "1.0"
+__version__ = "1.0.0"
 
 class BrewDistanceException(Exception):
     """Brew-Distance-specific exception used with argument validation."""
