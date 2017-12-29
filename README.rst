@@ -5,7 +5,7 @@
     :target: https://badge.fury.io/py/Brew-Distance
 
 Brew-Distance
-===========
+=============
 
 A Python module that implements the Brew edit distance algorithm. In
 simple terms, it compares two strings and determines the number of edits
@@ -162,7 +162,11 @@ See also
 
 python-Levenshtein_ and weighted-levenshtein_.
 
-A good article that discusses optimizations and character weightings is
+The Wikipedia `edit distance <https://en.wikipedia.org/wiki/Edit_distance>`_
+article is a good starting point to learn more about edit distance
+algorithms in general, and various enhancements that can be made to them.
+
+Another good article that discusses optimizations and character weightings is
 `Beyond StringUtils.getLevenstheinDistance <http://bend-ing.blogspot.ca/2008/06/beyond-stringutilsgetlevensteindistance.html?m=1>`_.
 It offers ideas for improving the basic Brew edit distance algorithm.
 
