@@ -158,6 +158,9 @@ e.g. to flag typical typing transposition errors.)
 See also
 --------
 
+The original article by Chris Brew that defines this algorithm is archived
+here: `Calculating Edit Distance Between Sequences <http://archive.is/20140611111436/www.ling.ohio-state.edu//%7Ecbrew/795M/string-distance.html>`_.
+
 `Perl's Text::Brew`_.
 
 python-Levenshtein_ and weighted-levenshtein_.
@@ -169,9 +172,6 @@ algorithms in general, and various enhancements that can be made to them.
 Another good article that discusses optimizations and character weightings is
 `Beyond StringUtils.getLevenstheinDistance <http://bend-ing.blogspot.ca/2008/06/beyond-stringutilsgetlevensteindistance.html?m=1>`_.
 It offers ideas for improving the basic Brew edit distance algorithm.
-
-Unfortunately, the original article by Chris Brew that defines his
-algorithm appears to no longer be available on the internet.
 
 Credits
 -------
