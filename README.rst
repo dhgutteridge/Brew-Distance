@@ -112,7 +112,7 @@ with as raw code points, without any semantic weighting. Such
 processing would require extension by the end user.
 
 Under Python 2, all non-Unicode strings are converted to UTF-8 encoding
-to ensure multi-byte characters are treated correctly.
+to try to ensure multi-byte characters are treated correctly.
 
 Compatibility
 -------------
