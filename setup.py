@@ -10,7 +10,7 @@ optional re-weighting of each edit type ("MATCH", "DEL", "INS",
 
 setup(
     name='Brew-Distance',
-    version='1.0.0',
+    version='1.0.1',
     author='David H. Gutteridge',
     author_email='dhgutteridge@hotmail.com',
     url='http://github.com/dhgutteridge/brew-distance',

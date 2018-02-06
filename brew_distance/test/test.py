@@ -2,7 +2,7 @@
 
 """Unit tests for brew_distance."""
 
-# Copyright (C) 2017 David H. Gutteridge.
+# Copyright (C) 2017, 2018 David H. Gutteridge.
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the Free
 # Software Foundation; either version 2 of the License, or (at your option)
@@ -78,6 +78,11 @@ class TestBrew(unittest.TestCase):
         expected = (0, ['MATCH', 'MATCH', 'MATCH', 'MATCH', 'MATCH', 'MATCH', 'MATCH', 'MATCH'])
         self.assertTrue(brew_distance.distance("possible", "poss", "both", (0, 1, 0, 1)) == expected)
 
+    def test_brew11(self):
+        """Test edit distance between 'foo' and 'fou' where substitutions are weighted at 0.5."""
+        expected = (0.5, ['MATCH', 'MATCH', 'SUBST'])
+        self.assertTrue(brew_distance.distance("foo", "fou", "both", (0, 1, 1, 0.5)) == expected)
+
     if sys.hexversion >= 0x02070000:
         # Note the following three tests trigger UnicodeEncodeError
         # exceptions with Python 2.6 and some 2.7 environments due to
@@ -88,17 +93,17 @@ class TestBrew(unittest.TestCase):
         # Python 2.7 has been left enabled for now, as it passes in the
         # Travis CI environment.
 
-        def test_brew11(self):
+        def test_brew12(self):
             """Test edit distance between 'cafe' and 'café'."""
             expected = (1, ['MATCH', 'MATCH', 'MATCH', 'SUBST'])
             self.assertTrue(brew_distance.distance("cafe", "café", "both") == expected)
 
-        def test_brew12(self):
+        def test_brew13(self):
             """Test edit distance between 'groß' and 'gross'."""
             expected = (2, ['MATCH', 'MATCH', 'MATCH', 'INS', 'SUBST'])
             self.assertTrue(brew_distance.distance("groß", "gross", "both") == expected)
 
-        def test_brew13(self):
+        def test_brew14(self):
             """Test edit distance between 'Σίβύλλα' and 'Sibylla'."""
             expected = (7, ['SUBST', 'SUBST', 'SUBST', 'SUBST', 'SUBST', 'SUBST', 'SUBST'])
             self.assertTrue(brew_distance.distance("Σίβύλλα", "Sibylla", "both") == expected)
@@ -107,7 +112,7 @@ class TestBrew(unittest.TestCase):
         # differences with its unittest implementation's exception
         # trapping. It's disabled for simplicity, instead of requiring
         # 2.6's unittest2, since that's not really necessary.
-        def test_brew14(self):
+        def test_brew15(self):
             """Test error handling of non-string input."""
             with self.assertRaises(BrewDistanceException):
                 brew_distance.distance(75, 67)

@@ -2,7 +2,7 @@
 
 # pylint: disable=superfluous-parens, too-many-locals, too-many-boolean-expressions
 
-# Copyright (C) 2017 David H. Gutteridge.
+# Copyright (C) 2017, 2018 David H. Gutteridge.
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the Free
 # Software Foundation; either version 2 of the License, or (at your option)
@@ -18,12 +18,13 @@
 # 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
 
 from collections import namedtuple
+import numbers
 import sys
 
 # Public symbols
 __all__ = ("distance", "BrewDistanceException")
 __author__ = "David H. Gutteridge"
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 class BrewDistanceException(Exception):
     """Brew-Distance-specific exception used with argument validation."""
@@ -118,13 +119,13 @@ def distance(string1, string2, output="both", cost=(0, 1, 1, 1)):
     Optional output is a string containing "distance", "edits", or
     "both", which determine results output, see below.
 
-    Optional cost is a four element tuple of integers used to adjust
+    Optional cost is a four element tuple of numbers used to adjust
     the costs of matches, insertions, deletions, and substitutions.
     (It is not recommended that match costs be adjusted: the algorithm
     is predicated on match having a lower cost than other operations.)
 
     The results vary depending on the output option:
-        "distance": provides the edit distance as an integer.
+        "distance": provides the edit distance as a number.
         "edits": provides an array with the list of edit actions.
         "both: provides a tuple containing the output of both
         previous options.
@@ -145,8 +146,8 @@ def distance(string1, string2, output="both", cost=(0, 1, 1, 1)):
     if output != "both" and output != "distance" and output != "edits":
         raise BrewDistanceException("Brew-Distance: invalid output parameter supplied.")
     elif (not isinstance(cost, tuple) or len(cost) != 4 or
-          not isinstance(cost[0], int) or not isinstance(cost[1], int) or
-          not isinstance(cost[2], int) or not isinstance(cost[3], int)):
+          not isinstance(cost[0], numbers.Real) or not isinstance(cost[1], numbers.Real) or
+          not isinstance(cost[2], numbers.Real) or not isinstance(cost[3], numbers.Real)):
         raise BrewDistanceException("Brew-Distance: invalid cost parameter supplied.")
     else:
         results = _edit_path(string1, string2, cost)

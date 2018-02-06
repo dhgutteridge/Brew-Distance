@@ -73,13 +73,13 @@ Interface
         Optional output is a string containing "distance", "edits", or
         "both", which determine results output, see below.
 
-        Optional cost is a four element array of integers used to adjust
+        Optional cost is a four element array of numbers used to adjust
         the costs of matches, insertions, deletions, and substitutions.
         (It is not recommended that match costs be adjusted: the algorithm
         is predicated on match having a lower cost than other operations.)
 
         The results vary depending on the output option:
-            "distance": provides the edit distance as an integer.
+            "distance": provides the edit distance as a number.
             "edits": provides an array with the list of edit actions.
             "both: provides a tuple containing the output of both
             previous options.
