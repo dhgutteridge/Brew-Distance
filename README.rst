@@ -150,10 +150,10 @@ which offers far more features in general, except it does not
 
 Another project under development (at the time of writing) is
 `weighted-levenshtein <https://github.com/infoscout/weighted-levenshtein/>`_,
-which also offers re-weighting of edit types, but (as of version 0.1)
-does not support Python 3 or Unicode. (However, it allows for
-re-weighting of individual characters, for more fine-grained analysis,
-e.g. to flag typical typing transposition errors.)
+which also offers re-weighting of edit types, but (as of version 0.2)
+does not support Unicode, and isn't tested on as many Python releases.
+However, it allows for re-weighting of individual characters, for more
+fine-grained analysis, e.g. to flag typical typing transposition errors.
 
 See also
 --------
