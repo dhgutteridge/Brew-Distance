@@ -24,7 +24,7 @@ matrix:
           sudo: false
         - python: 3.7
           dist: xenial
-          sudo: false
+          sudo: true
         - python: nightly
           dist: trusty
           sudo: false
