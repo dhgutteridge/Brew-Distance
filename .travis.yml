@@ -26,6 +26,6 @@ matrix:
           dist: xenial
           sudo: true
         - python: nightly
-          dist: trusty
-          sudo: false
+          dist: xenial
+          sudo: true
 script: python setup.py test
