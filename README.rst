@@ -15,7 +15,7 @@ when weighing multiple potentially similar strings in a data set.
 This is a mostly faithful remake of
 `Perl's Text::Brew <https://metacpan.org/pod/Text::Brew>`_ implementation,
 except "INITIAL" matches aren't reported in output, since that isn't
-meaningful. (And of course, it's written in a Pythonic idiom.) The Perl
+meaningful. (And, of course, it's written in a Pythonic idiom.) The Perl
 implementation itself states that it varies from the original Brew
 version, and I have followed it.
 
@@ -150,7 +150,7 @@ which offers far more features in general, except it does not
 
 Another project under development (at the time of writing) is
 `weighted-levenshtein <https://github.com/infoscout/weighted-levenshtein/>`_,
-which also offers re-weighting of edit types, but (as of version 0.2)
+which also offers re-weighting of edit types, but (as of version 0.2.1)
 does not support Unicode, and isn't tested on as many Python releases.
 However, it allows for re-weighting of individual characters, for more
 fine-grained analysis, e.g. to flag typical typing transposition errors.
@@ -184,7 +184,7 @@ implementation on which this is based.
 Author
 ------
 
-Copyright (C) 2017 David H. Gutteridge
+Copyright (C) 2017, 2018 David H. Gutteridge
 
 FAQs
 ----
