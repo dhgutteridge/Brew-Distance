@@ -7,7 +7,7 @@
 Brew-Distance
 =============
 
-A Python module that implements the Brew edit distance algorithm. In
+A Python module that implements a weightable edit distance algorithm. In
 simple terms, it compares two strings and determines the number of edits
 required to make the first the same as the second, typically for use
 when weighing multiple potentially similar strings in a data set.
@@ -15,14 +15,12 @@ when weighing multiple potentially similar strings in a data set.
 This is a mostly faithful remake of
 `Perl's Text::Brew <https://metacpan.org/pod/Text::Brew>`_ implementation,
 except "INITIAL" matches aren't reported in output, since that isn't
-meaningful. (And, of course, it's written in a Pythonic idiom.) The Perl
-implementation itself states that it varies from the original Brew
-version, and I have followed it.
+meaningful. (And, of course, it's written in a Pythonic idiom.)
 
 This module isn't intended to be the most efficient determiner of edit
-distance; rather, it's concerned with simply offering the Brew
-algorithm in pure Python, which provides not just edit distance, but
-the edit steps taken to determine it. It also allows each edit type
+distance; rather, it's concerned with simply offering this algorithm
+in pure Python, which provides not just edit distance, but the edit
+steps taken to determine it. It also allows each edit type
 ("MATCH", "DEL", "INS", "SUBST") to be re-weighted, one of its main
 points of difference. This implementation is useful for cases where
 real-time performance is not a consideration, but re-weighting edit
@@ -158,8 +156,8 @@ fine-grained analysis, e.g. to flag typical typing transposition errors.
 See also
 --------
 
-The original article by Chris Brew that defines this algorithm is archived
-here: `Calculating Edit Distance Between Sequences <http://archive.is/20140611111436/www.ling.ohio-state.edu//%7Ecbrew/795M/string-distance.html>`_.
+An article by Chris Brew that defines this algorithm is archived here:
+`Calculating Edit Distance Between Sequences <http://archive.is/20140611111436/www.ling.ohio-state.edu//%7Ecbrew/795M/string-distance.html>`_.
 
 `Perl's Text::Brew`_.
 
@@ -176,30 +174,32 @@ It offers ideas for improving the basic Brew edit distance algorithm.
 Credits
 -------
 
-Credit is due first and foremost to Chris Brew, the creator of the
-algorithm. Also, mention should be made of Dree Mistrut and Keith C.
-Ivey, who respectively created and maintained the Perl Text::Brew
-implementation on which this is based.
+Credit is due first and foremost to Chris Brew, who published a
+related implemntation of this algorithm. Also, mention should be made
+of Dree Mistrut and Keith C. Ivey, who respectively created and
+maintained the Perl Text::Brew implementation on which this is based.
 
 Author
 ------
 
-Copyright (C) 2017, 2018 David H. Gutteridge
+Copyright (C) 2017, 2018, 2019 David H. Gutteridge
 
 FAQs
 ----
 
 *What motivated you to write this?*
 
-I once had occasion to use the Perl Brew implementation as part of a
-project to relate data from disparate systems. I needed something that
-let me re-weight particular edits depending on the context (e.g. two
-strings of unequal length that matched up to the point the shorter one
-ended were considered a probable match if the shorter one came from a
-legacy system that had limited text fields), and Text::Brew fit the
-bill. I thought it would be nice to have a Python version available too,
-in part because the Perl implementation didn't support Unicode, and I
-was dealing with data in languages other than English.
+I once had occasion to use the Perl
+`Text::Brew <https://metacpan.org/pod/Text::Brew>`_
+implementation as part of a project to relate data from disparate systems.
+I needed something that let me re-weight particular edits depending on
+the context (e.g. two strings of unequal length that matched up to the
+point the shorter one ended were considered a probable match if the
+shorter one came from a legacy system that had limited text fields), and
+Text::Brew fit the bill. I thought it would be nice to have a Python
+version available too, in part because the Perl implementation didn't
+support Unicode, and I was dealing with data in languages other than
+English.
 
 *Why license it under the GPL?*
 
