@@ -174,10 +174,11 @@ It offers ideas for improving the basic Brew edit distance algorithm.
 Credits
 -------
 
-Credit is due first and foremost to Chris Brew, who published a
-related implemntation of this algorithm. Also, mention should be made
-of Dree Mistrut and Keith C. Ivey, who respectively created and
-maintained the Perl Text::Brew implementation on which this is based.
+Credit is due to Chris Brew, who published a related implementation of
+this algorithm (most commonly known as Wagner-Fischer). Also, mention
+should be made of Dree Mistrut and Keith C. Ivey, who respectively
+created and maintained the Perl Text::Brew implementation on which this
+is based.
 
 Author
 ------
