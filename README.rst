@@ -7,7 +7,7 @@
 Brew-Distance
 =============
 
-A Python module that implements a weightable edit distance algorithm. In
+A Python module that implements a weighted edit distance algorithm. In
 simple terms, it compares two strings and determines the number of edits
 required to make the first the same as the second, typically for use
 when weighing multiple potentially similar strings in a data set.
@@ -62,7 +62,7 @@ Interface
 ::
 
     function distance(string1, string2, output='both', cost=[0, 1, 1, 1])
-        Determine the Brew edit distance between two strings.
+        Determine the weighted edit distance between two strings.
 
         string1 is the string to be transformed.
 

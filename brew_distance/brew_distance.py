@@ -1,4 +1,4 @@
-"""Calculate the Brew edit distance of two strings."""
+"""Calculate the weighted edit distance of two strings."""
 
 # pylint: disable=superfluous-parens, too-many-locals, too-many-boolean-expressions
 
@@ -110,7 +110,7 @@ def _list_edits(raw_edits):
     return just_edits
 
 def distance(string1, string2, output="both", cost=(0, 1, 1, 1)):
-    """Determine the Brew edit distance between two strings.
+    """Determine the weighted edit distance between two strings.
 
     string1 is the string to be transformed.
 
