@@ -15,7 +15,7 @@ when weighing multiple potentially similar strings in a data set.
 This is a mostly faithful remake of
 `Perl's Text::Brew <https://metacpan.org/pod/Text::Brew>`_ implementation,
 except "INITIAL" matches aren't reported in output, since that isn't
-meaningful. (And, of course, it's written in a Pythonic idiom.)
+generally meaningful. (And, of course, it's written in a Pythonic idiom.)
 
 This module isn't intended to be the most efficient determiner of edit
 distance; rather, it's concerned with simply offering this algorithm
