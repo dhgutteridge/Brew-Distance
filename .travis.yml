@@ -14,8 +14,8 @@ matrix:
           dist: xenial
         - python: 3.8
           dist: xenial
-        - python: 3.9-dev
-          dist: bionic
+        - python: 3.9
+          dist: focal
         - python: nightly
-          dist: bionic
+          dist: focal
 script: python setup.py test
