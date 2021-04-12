@@ -18,4 +18,4 @@ matrix:
           dist: focal
         - python: nightly
           dist: focal
-script: python setup.py test
+script: python -m unittest discover -v
