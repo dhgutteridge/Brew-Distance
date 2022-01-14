@@ -103,7 +103,7 @@ def _list_edits(raw_edits):
     just_edits = list()
 
     # (We don't bother reporting the initial match, as that's pointless.)
-    while raw_edits.traceback != None:
+    while raw_edits.traceback is not None:
         just_edits.insert(0, raw_edits.move)
         raw_edits = raw_edits.traceback
 
