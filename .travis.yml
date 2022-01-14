@@ -16,6 +16,7 @@ matrix:
           dist: xenial
         - python: 3.9
           dist: focal
+        - os: freebsd
         - python: nightly
           dist: focal
 script: python -m unittest discover -v
