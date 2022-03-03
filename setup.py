@@ -46,6 +46,5 @@ setup(
         "Topic :: Text Processing :: Linguistic",
         "Topic :: Utilities",
         "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)"
-    ],
-    install_requires='setuptools'
+    ]
 )
