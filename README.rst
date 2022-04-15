@@ -171,7 +171,7 @@ is based.
 Author
 ------
 
-Copyright (C) 2017, 2018, 2019 David H. Gutteridge
+Copyright (C) 2017, 2018, 2019, 2020, 2021, 2022 David H. Gutteridge
 
 FAQs
 ----
