@@ -18,7 +18,7 @@ setup(
     license='LICENSE.txt',
     description='A Python module that implements a weighted edit distance algorithm.',
     long_description=long_description,
-    keywords=['edit', 'distance', 'editdistance', 'levenshtein', 'brew', 'string', 'comparison'],
+    keywords=['edit', 'distance', 'editdistance', 'levenshtein', 'wagner-fischer', 'brew', 'string', 'comparison'],
     test_suite='brew_distance.test',
     include_package_data=True,
     classifiers=[
