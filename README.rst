@@ -130,7 +130,7 @@ Alternate options
 -----------------
 
 There are many alternate options for edit distance calculations, perhaps
-most notably `python-Levenshtein <https://github.com/ztane/python-Levenshtein/>`_,
+most notably `Levenshtein <https://github.com/rapidfuzz/Levenshtein/>`_,
 which offers far more features in general, except it does not
 (at present) allow for re-weighting edit types.
 
@@ -149,7 +149,7 @@ An article by Chris Brew that defines this algorithm is archived here:
 
 `Perl's Text::Brew`_.
 
-python-Levenshtein_ and weighted-levenshtein_.
+Levenshtein_ and weighted-levenshtein_.
 
 The Wikipedia `edit distance <https://en.wikipedia.org/wiki/Edit_distance>`_
 article is a good starting point to learn more about edit distance
