@@ -101,7 +101,7 @@ Notes
 Character comparisons are case-sensitive.
 
 There are no special considerations concerning the relatedness of
-various Unicode characters, e.g. a German Eszett (double-S) character
+various Unicode characters, e.g., a German Eszett (double-S) character
 is not considered equivalent to two S characters. Characters are dealt
 with as raw code points, without any semantic weighting. Such
 processing would require extension by the end user.
@@ -136,10 +136,10 @@ which offers far more features in general, except it does not
 
 Another project under development (at the time of writing) is
 `weighted-levenshtein <https://github.com/infoscout/weighted-levenshtein/>`_,
-which also offers re-weighting of edit types, but (as of version 0.2.1)
+which also offers re-weighting of edit types, but (as of version 0.2.2)
 does not support Unicode, and isn't tested on as many Python releases.
 However, it allows for re-weighting of individual characters, for more
-fine-grained analysis, e.g. to flag typical typing transposition errors.
+fine-grained analysis, e.g., to flag typical typing transposition errors.
 
 See also
 --------
@@ -182,7 +182,7 @@ I once had occasion to use the Perl
 `Text::Brew <https://metacpan.org/pod/Text::Brew>`_
 implementation as part of a project to relate data from disparate systems.
 I needed something that let me re-weight particular edits depending on
-the context (e.g. two strings of unequal length that matched up to the
+the context (e.g., two strings of unequal length that matched up to the
 point the shorter one ended were considered a probable match if the
 shorter one came from a legacy system that had limited text fields), and
 Text::Brew fit the bill. I thought it would be nice to have a Python
