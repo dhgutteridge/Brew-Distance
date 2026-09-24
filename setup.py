@@ -15,7 +15,7 @@ setup(
     author_email='dhgutteridge@hotmail.com',
     url='http://github.com/dhgutteridge/brew-distance',
     packages=find_packages(),
-    license='LICENSE.txt',
+    license='GPL-2.0-or-later',
     description='A Python module that implements a weighted edit distance algorithm.',
     long_description=long_description,
     keywords=['edit', 'distance', 'editdistance', 'levenshtein', 'wagner-fischer', 'brew', 'string', 'comparison'],
